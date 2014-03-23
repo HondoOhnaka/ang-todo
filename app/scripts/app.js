@@ -5,7 +5,8 @@ var app = angular.module('todoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ]);
 
 app.config(function ($routeProvider) {
@@ -25,6 +26,10 @@ app.config(function ($routeProvider) {
       .when('/about/', {
         templateUrl: 'views/about.html',
         controller: 'NavCtrl'
+      })
+      .when('/bootstrap', {
+        templateUrl: 'views/bootstrap.html',
+        controller: 'BootstrapCtrl'
       })
       .otherwise({
         redirectTo: '/'

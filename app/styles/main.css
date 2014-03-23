@@ -82,3 +82,11 @@ body {
 #todo-list h3 {
   display: inline;
 }
+
+#myTab li.active a {
+  background-color: pink;
+}
+
+span.completed {
+  text-decoration: line-through;
+}

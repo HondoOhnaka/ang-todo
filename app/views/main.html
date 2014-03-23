@@ -2,9 +2,32 @@
   <div class="jumbotron" ng-controller="MainCtrl">
     <h1>ToDo</h1>
     <p>This is a test to-do application written in AngularJS</p>
+  </div>
 
-    <div id="todo-list" ng-repeat="e in entries">
-      <h3 ng-model="entries">{{e}}</h3><span><i class="fa fa-check"></i> </span>
-    </div>
+  <div class="row">
+    <tabset>
+        <tab heading="Todos">
+          <div id="todo-list" ng-repeat="e in entries">
+            <h3>
+              <div ng-hide="e.completed">
+                <input type="checkbox" ng-model="e.completed" bs-switch>
+                <span ng-class="{'completed': e.completed}">{{e.name}}</span>
+                <!-- <span style="font-size:12px;" class="muted">{{e}}</span> -->
+              </div>
+            </h3>
+          </div>
+          <br>
+          <input type="text" ng-model="newItem.name" class="input-md" placeholder="New Item Name" />
+          <button class="btn btn-success btn-md" ng-click="addItem(newItem.name)">Add Item</button>
+
+        </tab>
+        <tab heading="Completed">
+          <div id="completed-list" ng-repeat="x in entries">
+            <h4>
+              <span ng-show="x.completed"><i class="fa fa-check"></i> {{x.name}}</span>
+            </h4>
+          </div>
+        </tab>
+      </tabset>
   </div>
 </div>

@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h1>Bootstrap Angular Directives</h1>
+
+  <div ng-controller="BootstrapCtrl">
+
+    <tabset>
+      <tab heading="Todos">
+        <div ng-repeat="a in awesomeThings">
+          {{a}}
+        </div>
+      </tab>
+      <tab heading="Completed">
+        <ul>
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+        </ul>
+      </tab>
+    </tabset>
+  </div>
+
+  <hr>
+  <h4>My Custom Directive</h4>
+  <click-to-edit></click-to-edit>
+
+</div>
